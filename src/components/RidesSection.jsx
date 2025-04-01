@@ -119,12 +119,19 @@
 //     );
 //   };
    
-//   export default RidesSection
+//   export default RidesSection;
+
+
+
+
+
 
 import { useState } from "react";
 import RideCard from "./RideCard";
 import CategoryButton from "./CategoryButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 const ridesData = [
   { id: 1, title: "Sky Ring", location: "Kochi", description: "Shoot up a sky-high tower...", image: "https://i.ytimg.com/vi/yp3B7hdot_U/maxresdefault.jpg" },
@@ -162,18 +169,24 @@ const RidesSection = () => {
           
           {/* Carousel Controls Positioned Below Navbar */}
           <div className="flex justify-end mt-8 space-x-4">
-            <button 
+            <motion.button 
               className="bg-yellow-400 p-4 rounded-full hover:bg-yellow-300 transition-colors"
               onClick={handlePrev}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <ChevronLeft className="w-6 h-6 text-gray-800" />
-            </button>
-            <button 
+            </motion.button>
+            <motion.button 
               className="bg-yellow-400 p-4 rounded-full hover:bg-yellow-300 transition-colors"
               onClick={handleNext}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <ChevronRight className="w-6 h-6 text-gray-800" />
-            </button>
+            </motion.button>
           </div>
           
           <div className="flex">
@@ -227,9 +240,14 @@ const RidesSection = () => {
           
           {/* Explore All Rides button */}
           <div className=" ml-10 mb-20 flex justify-center mt-12 mb-8">
-            <button className="bg-yellow-400 text-blue-900 py-3 px-8 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors">
+          <motion.button 
+              className="bg-yellow-400 text-blue-900 py-3 px-8 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               Explore All Rides!
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -237,3 +255,11 @@ const RidesSection = () => {
   };
    
   export default RidesSection;
+
+
+
+
+
+
+
+

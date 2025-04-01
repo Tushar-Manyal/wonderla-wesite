@@ -157,21 +157,94 @@
 
 // export default Navbar;
 
-/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////correct
 
 
+// import { useState } from "react";
+// import NavItem from "./NavItems";
+
+// const Navbar = () => {
+//   const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
+
+//   const handleDropdownToggle = () => {
+//     setIsLocationsDropdownOpen((prevState) => !prevState);
+//   };
+
+//   return (
+//     <div className="bg-white rounded-2xl relative top-6 z-10 py-4 px-8 shadow-lg">
+//       <div className="max-w-6xl mx-auto flex items-center justify-between">
+//         <div className="w-40">
+//           <img
+//             src="https://wonderla.komquest.com/images/logo.svg"
+//             alt="Wonderla Logo"
+//             className="h-12 object-contain"
+//           />
+//         </div>
+
+//         <div className="flex items-center space-x-8">
+//           {/* Location NavItem with dropdown */}
+//           <div className="relative">
+//             <button
+//               onClick={handleDropdownToggle}
+//               className="text-blue-900 font-semibold"
+//             >
+//               LOCATIONS
+//             </button>
+//             {isLocationsDropdownOpen && (
+//               <div className="absolute top-full left-0 mt-2 bg-white text-blue-900 border border-gray-300 shadow-lg rounded-lg w-48">
+//                 <ul className="p-2">
+//                   <li className="hover:bg-yellow-400 p-2 cursor-pointer">Bangalore</li>
+//                   <li className="hover:bg-yellow-400 p-2 cursor-pointer">Kochi</li>
+//                   <li className="hover:bg-yellow-400 p-2 cursor-pointer">Hyderabad</li>
+//                   <li className="hover:bg-yellow-400 p-2 cursor-pointer">Chennai</li>
+//                 </ul>
+//               </div>
+//             )}
+//           </div>
+
+//           {/* Other NavItems */}
+//           <NavItem label="OFFERS" />
+//           <NavItem label="RIDES" />
+//           <NavItem label="RESTAURANTS" />
+//           <NavItem label="EVENTS" />
+
+//           <button className="bg-yellow-400 text-blue-900 font-bold py-2 px-4 rounded">
+//             BOOK TICKETS
+//           </button>
+
+//           {/* Menu Icon */}
+//           <div className="text-blue-900">
+//             <div className="w-8 h-1 bg-blue-900 mb-1"></div>
+//             <div className="w-8 h-1 bg-blue-900 mb-1"></div>
+//             <div className="w-8 h-1 bg-blue-900"></div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+
+
+import { motion } from "framer-motion";
 import { useState } from "react";
 import NavItem from "./NavItems";
 
 const Navbar = () => {
-  const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
-  const handleDropdownToggle = () => {
-    setIsLocationsDropdownOpen((prevState) => !prevState);
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
   };
 
   return (
-    <div className="bg-white rounded-2xl relative top-6 z-10 py-4 px-8 shadow-lg">
+    <motion.div
+      className="bg-white rounded-2xl relative top-6 z-10 py-4 px-8 shadow-lg"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <div className="w-40">
           <img
@@ -182,48 +255,44 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-8">
-          {/* Location NavItem with dropdown */}
+          {/* Locations NavItem with Dropdown */}
           <div className="relative">
             <button
-              onClick={handleDropdownToggle}
-              className="text-blue-900 font-semibold"
+              onClick={toggleDropdown}
+              className="font-bold text-blue-900"
             >
               LOCATIONS
             </button>
-            {isLocationsDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white text-blue-900 border border-gray-300 shadow-lg rounded-lg w-48">
-                <ul className="p-2">
-                  <li className="hover:bg-yellow-400 p-2 cursor-pointer">Bangalore</li>
-                  <li className="hover:bg-yellow-400 p-2 cursor-pointer">Kochi</li>
-                  <li className="hover:bg-yellow-400 p-2 cursor-pointer">Hyderabad</li>
-                  <li className="hover:bg-yellow-400 p-2 cursor-pointer">Chennai</li>
+
+            {/* Dropdown Menu */}
+            {dropdownVisible && (
+              <motion.div
+                className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg w-48"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ul className="py-2">
+                  <li className="px-4 py-2 hover:bg-yellow-400 cursor-pointer">Bangalore</li>
+                  <li className="px-4 py-2 hover:bg-yellow-400 cursor-pointer">Kochi</li>
+                  <li className="px-4 py-2 hover:bg-yellow-400 cursor-pointer">Hyderabad</li>
+                  <li className="px-4 py-2 hover:bg-yellow-400 cursor-pointer">Chennai</li>
                 </ul>
-              </div>
+              </motion.div>
             )}
           </div>
 
-          {/* Other NavItems */}
           <NavItem label="OFFERS" />
           <NavItem label="RIDES" />
           <NavItem label="RESTAURANTS" />
           <NavItem label="EVENTS" />
-
           <button className="bg-yellow-400 text-blue-900 font-bold py-2 px-4 rounded">
             BOOK TICKETS
           </button>
-
-          {/* Menu Icon */}
-          <div className="text-blue-900">
-            <div className="w-8 h-1 bg-blue-900 mb-1"></div>
-            <div className="w-8 h-1 bg-blue-900 mb-1"></div>
-            <div className="w-8 h-1 bg-blue-900"></div>
-          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default Navbar;
-
-

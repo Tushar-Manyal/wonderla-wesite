@@ -13,4 +13,27 @@ const RideCard = ({ ride }) => {
   };
   
   export default RideCard;
+
+// import { motion } from "framer-motion";
+// import RideCard from "./RideCard";
+
+// const RidesSection = ({ visibleRides }) => {
+//   return (
+//     <div className="flex justify-center space-x-4 mb-8">
+//       {visibleRides.map((ride) => (
+//         <motion.div
+//           key={ride.id}
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 0.5 }}
+//         >
+//           <RideCard ride={ride} />
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default RidesSection;
+
   

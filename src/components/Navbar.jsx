@@ -289,6 +289,11 @@ const Navbar = () => {
           <button className="bg-yellow-400 text-blue-900 font-bold py-2 px-4 rounded">
             BOOK TICKETS
           </button>
+          <div className="text-blue-900">            
+            <div className="w-8 h-1 bg-blue-900 mb-1"></div>
+            <div className="w-8 h-1 bg-blue-900 mb-1"></div>
+            <div className="w-8 h-1 bg-blue-900"></div>
+        </div>
         </div>
       </div>
     </motion.div>

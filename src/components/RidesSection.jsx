@@ -241,7 +241,7 @@ const RidesSection = () => {
           {/* Explore All Rides button */}
           <div className=" ml-10 mb-20 flex justify-center mt-12 mb-8">
           <motion.button 
-              className="bg-yellow-400 text-blue-900 py-3 px-8 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors"
+              className="bg-yellow-400 text-blue-900 py-3 px-8 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors relative bottom-20 left-5 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

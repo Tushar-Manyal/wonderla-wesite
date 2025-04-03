@@ -131,6 +131,7 @@ import RideCard from "./RideCard";
 import CategoryButton from "./CategoryButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import RideStats from "./RidesStats";
 
 
 const ridesData = [
@@ -158,19 +159,19 @@ const RidesSection = () => {
     const visibleRides = ridesData.slice(currentIndex, currentIndex + itemsPerPage);
   
     return (
-      <div className="bg-gray-900 text-white p-4 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-1/3 h-full bg-yellow-400 rounded-r-full -z-10"></div>
+      <div className=" text-white p-4 relative overflow-hidden">
+        {/* <div className="absolute top-0 left-0 w-1/3 h-full bg-yellow-300 rounded-r-full -z-10"></div> */}
         
         {/* Main content container */}
         <div className="max-w-6xl mx-auto ">
           {/* Heading */}
           
-          <h2 className="text-5xl font-bold text-center relative top-6 mb-5 mt-8">OUR ICONIC RIDES</h2>
+          <h2 className="text-6xl font-extrabold tracking-tight text-center relative left-[-35px] top-6 mb-5 mt-8">OUR ICONIC RIDES</h2>
           
           {/* Carousel Controls Positioned Below Navbar */}
-          <div className="flex justify-end mt-8 space-x-4">
+          <div className="flex justify-end relative top-[-60px] left-32 mt-8 space-x-4">
             <motion.button 
-              className="bg-yellow-400 p-4 rounded-full hover:bg-yellow-300 transition-colors"
+              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 transition-colors"
               onClick={handlePrev}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -179,7 +180,7 @@ const RidesSection = () => {
               <ChevronLeft className="w-6 h-6 text-gray-800" />
             </motion.button>
             <motion.button 
-              className="bg-yellow-400 p-4 rounded-full hover:bg-yellow-300 transition-colors"
+              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 transition-colors"
               onClick={handleNext}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -190,10 +191,11 @@ const RidesSection = () => {
           </div>
           
           <div className="flex">
-            {/* Left sidebar for categories */}
-            <div className="w-1/4 pr-4">
-              <CategoryButton 
-                icon={<svg viewBox="0 0 24 24" className="w-12 h-12 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2">
+          <RideStats/>
+            {/* Left sidebar for categories  */}
+            {/* <div className="w-1/6 pr-10 h-5">
+              <CategoryButton className=""
+                icon={<svg viewBox="0 0 24 24" className="w-12 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 2 L12 22 M2 12 L22 12" />
                 </svg>}
@@ -226,10 +228,10 @@ const RidesSection = () => {
                 isActive={activeCategory === 'Kids'}
                 onClick={() => setActiveCategory('Kids')}
               />
-            </div>
+            </div> */}
             
             {/* Right side for rides carousel */}
-            <div className="w-3/4 relative">
+            <div className="w-29/30 left-30 mx-[-40px]  relative">
               <div className="flex justify-center space-x-4 mb-8">
                 {visibleRides.map(ride => (
                   <RideCard key={ride.id} ride={ride} />
@@ -239,9 +241,9 @@ const RidesSection = () => {
           </div>
           
           {/* Explore All Rides button */}
-          <div className=" ml-10 mb-20 flex justify-center mt-12 mb-8">
+          <div className=" ml-10 mb-20 flex justify-center mt-12 ">
           <motion.button 
-              className="bg-yellow-400 text-blue-900 py-3 px-8 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors relative bottom-20 left-5 "
+              className="bg-yellow-300 text-blue-900 py-3 px-18 rounded-full text-lg font-bold hover:bg-yellow-300 transition-colors relative bottom-77 left-5 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

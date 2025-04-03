@@ -112,22 +112,23 @@ import { motion } from "framer-motion";
 const RideCard = ({ ride }) => {
   return (
     <motion.div
-      className="relative w-full max-w-xs rounded-lg overflow-hidden shadow-lg cursor-pointer"
+      className="relative w-full max-w-xs rounded-t-4xl overflow-hidden  cursor-pointer"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="relative w-full h-90">
+      <div className="relative w-full gap-7 h-85">
         <img 
           src={ride.image} 
           alt={ride.title} 
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#22304A] via-transparent to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#22304A]"></div> */}
       </div>
       <div className="absolute bottom-0 p-4 w-full text-white">
         <h3 className="text-lg font-bold">{ride.title}</h3>
         <p className="text-gray-300">{ride.description}</p>
-        <button className="mt-2 bg-yellow-400 text-blue-900 py-2 px-4 rounded-md text-sm font-bold hover:bg-yellow-300 transition-colors">
+        <button className="h-10 w-40 mt-2 bg-yellow-300 text-blue-900 my-[-10px] py-2 px-4 rounded-md text-md font-bold hover:scale-[1.h-5 transition-colors">
           Ride Details
         </button>
       </div>

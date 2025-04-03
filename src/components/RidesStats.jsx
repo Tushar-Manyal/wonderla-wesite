@@ -131,7 +131,7 @@ const RideStats = () => {
 
       {/* Land Ride */}
       <div className="absolute top-[-145px] left-[-150px] flex flex-col items-center">
-        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center justify-center shadow-lg">
+        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex hover:scale-105 items-center justify-center shadow-lg">
           <FerrisWheel className="h-12 w-12 text-blue-800" />
         </div>
         <div className="absolute top-5 left-[180px] text-left">
@@ -144,7 +144,7 @@ const RideStats = () => {
 
       {/* Water Ride */}
       <div className="absolute top-[62px] left-[-29px] flex flex-col items-center">
-        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center justify-center shadow-lg">
+        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center justify-center hover:scale-105 shadow-lg">
           <Ship className="h-12 w-12 text-blue-800" />
         </div>
         <div className="absolute top-10 left-[160px] text-left">
@@ -157,7 +157,7 @@ const RideStats = () => {
 
       {/* Kids Ride */}
       <div className="absolute top-[290px] left-[-150px] flex flex-col items-center">
-        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center justify-center shadow-lg">
+        <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center hover:scale-105 justify-center shadow-lg">
           <Umbrella className="h-12 w-12 text-blue-800" />
         </div>
         <div className="absolute top-10 left-[180px] text-left">

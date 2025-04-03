@@ -272,7 +272,7 @@ const Navbar = () => {
               onClick={toggleDropdown}
               className="font-extrabold text-gray-400 flex items-center"
             >
-            <CiLocationOn className="text-xl font-extrabold "/>
+            <CiLocationOn className="text-xl text-gray-500 font-extrabold "/>
               LOCATIONS
             </button>
 

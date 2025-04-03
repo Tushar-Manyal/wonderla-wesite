@@ -166,12 +166,12 @@ const RidesSection = () => {
         <div className="max-w-6xl mx-auto ">
           {/* Heading */}
           
-          <h2 className="text-6xl font-extrabold tracking-tight text-center relative left-[-35px] top-6 mb-5 mt-8">OUR ICONIC RIDES</h2>
+          <h2 className="text-6xl font-extrabold tracking-tight text-center relative left-[-38px] top-6 mb-5 mt-8">OUR ICONIC RIDES</h2>
           
           {/* Carousel Controls Positioned Below Navbar */}
           <div className="flex justify-end relative top-[-60px] left-32 mt-8 space-x-4">
             <motion.button 
-              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 transition-colors"
+              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 hover:scale-105 transition-colors"
               onClick={handlePrev}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -180,7 +180,7 @@ const RidesSection = () => {
               <ChevronLeft className="w-6 h-6 text-gray-800" />
             </motion.button>
             <motion.button 
-              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 transition-colors"
+              className="bg-yellow-300 p-4 rounded-full hover:bg-yellow-200 hover:scale-105 transition-colors"
               onClick={handleNext}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

@@ -128,8 +128,8 @@ const RideCard = ({ ride }) => {
       <div className="absolute bottom-0 p-4 w-full text-white">
         <h3 className="text-lg font-bold">{ride.title}</h3>
         <p className="text-gray-300">{ride.description}</p>
-        <button className="h-10 w-40 mt-2 bg-yellow-300 text-blue-900 my-[-10px] py-2 px-4 rounded-md text-md font-bold hover:scale-[1.h-5 transition-colors">
-          Ride Details
+        <button className="h-10 w-40 mt-2 bg-yellow-300 text-blue-800 my-[-10px] py-2 px-4 rounded-md text-[13px] font-bold hover:scale-[1.h-5 transition-colors">
+          RIDE DETAILS
         </button>
       </div>
     </motion.div>

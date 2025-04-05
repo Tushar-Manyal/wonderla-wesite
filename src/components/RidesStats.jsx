@@ -127,7 +127,9 @@ const RideStats = () => {
   return (
     <div className="relative h-screen w-50 bg-navy-900 flex items-center justify-center">
       {/* Semi-circular yellow arc - Shifted further left */}
-      <div className="absolute h-[600px] w-[600px] left-[-510px] bottom-65 border-[90px] border-yellow-300 rounded-full clip-circle z-0"></div>
+      <div className="stickey">
+      <div className="absolute h-[600px] w-[600px] left-[-511px] top-[-155px] border-[90px] border-yellow-300 rounded-full clip-circle z-0"></div>
+      </div>
 
       {/* Land Ride */}
       <div className="absolute top-[-145px] left-[-150px] flex flex-col items-center">
@@ -143,7 +145,7 @@ const RideStats = () => {
       </div>
 
       {/* Water Ride */}
-      <div className="absolute top-[62px] left-[-29px] flex flex-col items-center">
+      <div className="absolute top-[64px] left-[-29px] flex flex-col items-center">
         <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center justify-center hover:scale-105 shadow-lg">
           <Ship className="h-16 w-16 text-blue-800" />
         </div>
@@ -156,7 +158,7 @@ const RideStats = () => {
       </div>
 
       {/* Kids Ride */}
-      <div className="absolute top-[280px] left-[-150px] flex flex-col items-center">
+      <div className="absolute top-[290px] left-[-149px] flex flex-col items-center">
         <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center hover:scale-105 justify-center shadow-lg">
           <Umbrella className="h-16 w-16 text-blue-800" />
         </div>

@@ -156,7 +156,7 @@ const RideStats = () => {
       </div>
 
       {/* Kids Ride */}
-      <div className="absolute top-[290px] left-[-150px] flex flex-col items-center">
+      <div className="absolute top-[280px] left-[-150px] flex flex-col items-center">
         <div className="bg-white h-36 w-36 rounded-full border-8 border-yellow-300 flex items-center hover:scale-105 justify-center shadow-lg">
           <Umbrella className="h-16 w-16 text-blue-800" />
         </div>

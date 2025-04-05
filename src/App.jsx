@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div className='bg-[#22304A] h-full overflow-hidden'>
       <WonderlaPage/>
-      {/* <RideStats/> */}
     </div>
   )
 }
